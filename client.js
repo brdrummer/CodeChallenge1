@@ -7,6 +7,7 @@ $(document).ready(onReady);
 
 function onReady() {
   $('#generateButton').on('click', displayDiv);
+  $('#divAppend').on('click', '.deleteButton', handleDelete);
 
 
 }
@@ -17,16 +18,30 @@ function displayDiv() {
 
 
 
-countClicks++;
+  countClicks++;
 
-console.log( countClicks );
+  console.log( countClicks );
 
 
 
-// $('#divAppend').append(
-//   `<div>
-//   <p>` + $('#generateButton') + `</p>
-//
-//   </div>`);
+  $('#divAppend').append(
+    `<div>
+    <p>` + countClicks + `</p>
 
+    </div>`);
+
+  }
+
+
+
+function myFunction() {
+  console.log('working');
+    let element = document.getElementById("divAppend");
+    element.classList.toggle("mystyle");
 }
+
+function handleDelete(){
+   $(this).parent().remove();
+
+
+  }
